@@ -25,7 +25,15 @@ function createApp() {
   app.use('/api/watchlist', watchlistRoutes);
   app.use('/api', systemRoutes);
 
-  return app;
+app.get('/', (req, res) => {
+  res.json({ ok: true, service: 'BetAnalytics API' });
+});
+
+app.get('/status', (req, res) => {
+  res.json({ ok: true, status: 'online', ts: new Date().toISOString() });
+});
+
+return app;
 }
 
 module.exports = { createApp };
