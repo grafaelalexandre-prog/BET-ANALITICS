@@ -10,6 +10,7 @@ const aiRoutes = require('./routes/aiRoutes');
 const resultsRoutes = require('./routes/resultsRoutes');
 const watchlistRoutes = require('./routes/watchlistRoutes');
 const systemRoutes = require('./routes/systemRoutes');
+const scannerRoutes = require('./routes/scannerRoutes');
 
 dataService.bindRuntime(state);
 
@@ -24,6 +25,7 @@ function createApp() {
   app.use('/api/results', resultsRoutes);
   app.use('/api/watchlist', watchlistRoutes);
   app.use('/api', systemRoutes);
+  app.use('/api', scannerRoutes);
 
 app.get('/', (req, res) => {
   res.json({ ok: true, service: 'BetAnalytics API' });
