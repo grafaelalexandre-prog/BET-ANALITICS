@@ -5,7 +5,7 @@
  */
 
 const express = require('express');
-const { fetchMatches } = require('../services/providers/footballDataProvider');
+const { fetchMatches } = require('../services/footballDataProvider');
 const { enrichMatches } = require('../services/matchEnrichmentService');
 
 const router = express.Router();
