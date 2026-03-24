@@ -3,7 +3,7 @@
  * Orquestra providers e analyzers para enriquecer cada jogo.
  */
 
-const { fetchTeamMatches } = require('./providers/footballDataProvider');
+const { fetchMatches } = require('./footballDataProvider');
 const { analyzeForm, compareForm } = require('./analyzers/formAnalyzer');
 const { analyzeGoals, fallbackGoals } = require('./analyzers/goalsAnalyzer');
 const { generateAnalysis, fallbackAnalysis } = require('./analyzers/marketEngine');
