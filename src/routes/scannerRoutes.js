@@ -15,7 +15,13 @@ const LEAGUES = ['BSA', 'BSB', 'PL', 'PD', 'CL', 'CLI', 'BL1', 'SA', 'FL1', 'PPL
 
 router.get('/scanner', async (req, res) => {
   console.log('[scanner] route hit');
-  try {
+
+  return res.json({
+    ok: true,
+    message: 'scanner funcionando',
+    timestamp: new Date().toISOString()
+  });
+});
     const leagueFilter = req.query.league?.toUpperCase();
     const leagues = leagueFilter && LEAGUES.includes(leagueFilter)
       ? [leagueFilter]
